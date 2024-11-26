@@ -1,27 +1,60 @@
+@import '../styles/themes.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --mouse-x: 50%;
+  --mouse-y: 50%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-gradient-radial {
+  background-image: 
+    radial-gradient(
+      circle at var(--mouse-x) var(--mouse-y),
+      hsl(var(--primary) / 0.3),
+      hsl(var(--accent) / 0.2) 30%,
+      hsl(var(--background))
+    ),
+    linear-gradient(
+      to right,
+      hsl(var(--background)),
+      hsl(var(--accent) / 0.1),
+      hsl(var(--background))
+    );
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 5s linear infinite;
 }
