@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic'
 import { Button } from './ui/button'
-import { Card } from './ui/card'
 import { Download, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useCallback, useRef, useEffect, memo } from 'react'
@@ -83,18 +82,16 @@ export function ResumeContent() {
   const mouseMoveThrottleRef = useRef<number>()
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
-    if (!containerRef.current || mouseMoveThrottleRef.current) return
+    if (!containerRef.current) return
     
-    mouseMoveThrottleRef.current = window.requestAnimationFrame(() => {
-      const rect = containerRef.current?.getBoundingClientRect()
-      if (rect) {
-        const x = ((e.clientX - rect.left) / rect.width) * 100
-        const y = ((e.clientY - rect.top) / rect.height) * 100
-        containerRef.current.style.setProperty('--mouse-x', `${x}%`)
-        containerRef.current.style.setProperty('--mouse-y', `${y}%`)
-      }
-      mouseMoveThrottleRef.current = undefined
-    })
+    const rect = containerRef.current.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    
+    if (containerRef.current) {
+      containerRef.current.style.setProperty('--mouse-x', `${x}%`)
+      containerRef.current.style.setProperty('--mouse-y', `${y}%`)
+    }
   }, [])
 
   useEffect(() => {

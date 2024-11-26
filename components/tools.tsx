@@ -67,7 +67,7 @@ const ToolCategory = memo(({ category, tools }: {
   <div>
     <h3 className="text-xs font-medium text-muted-foreground mb-1.5">{category}</h3>
     <div className="grid grid-cols-2 gap-1.5">
-      {tools.map((tool, index) => (
+      {tools.map((tool) => (
         <ToolItem key={tool.name} tool={tool} />
       ))}
     </div>
