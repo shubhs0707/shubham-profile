@@ -16,10 +16,10 @@ export function Education() {
           transition={{ duration: 0.3 }}
         >
           <h3 className="text-xl font-semibold">Indian Institute of Technology, Roorkee</h3>
-          <p className="text-muted-foreground">Jul'09-Apr'13</p>
+          <p className="text-muted-foreground">2009 - 2013</p>
           <ul className="list-disc list-inside mt-2 space-y-1">
-            <li>B. Tech in Metallurgical and Materials Engineering | CGPA: 7.4</li>
-            <li>Department Secretary, Involved in choreography group, entrepreneurship cell and robotics.</li>
+            <li>B.Tech Metallurgical & Materials Engineering | CGPA: 7.4</li>
+            <li>Department Secretary. Active in entrepreneurship, robotics, and choreography.</li>
           </ul>
         </motion.div>
       </CardContent>
