@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { useCallback, useRef, memo } from 'react'
+import { useRef, memo } from 'react'
 import { motion, LazyMotion, domAnimation } from 'framer-motion'
 import { FloatingMenu } from './floating-menu'
 import { ThemeToggle } from './theme-toggle'

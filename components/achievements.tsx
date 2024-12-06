@@ -1,10 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Trophy, Users, Newspaper, Presentation, Lightbulb, Target, ExternalLink } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import { Button } from "@/components/ui/button"
 
 interface Link {
   title: string;
@@ -20,6 +19,7 @@ interface BaseAchievement {
 
 interface HighlightAchievement extends BaseAchievement {
   type: 'highlight';
+  highlights: string[];
 }
 
 interface LinkAchievement extends BaseAchievement {
