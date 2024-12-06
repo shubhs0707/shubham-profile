@@ -1,33 +1,33 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Trophy, Users, TrendingUp, Lightbulb, Award, Target, Newspaper, Presentation, ExternalLink } from 'lucide-react'
-import { LucideIcon } from 'lucide-react'
-import { Button } from './ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Trophy, Users, Newspaper, Presentation, Lightbulb, Target, ExternalLink } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 interface Link {
-  title: string
-  description: string
-  url: string
+  title: string;
+  url: string;
+  description?: string;
 }
 
 interface BaseAchievement {
-  icon: LucideIcon
-  title: string
-  description: string
+  icon: LucideIcon;
+  title: string;
+  description: string;
 }
 
 interface HighlightAchievement extends BaseAchievement {
-  type: 'highlight'
-  highlights: string[]
+  type: 'highlight';
 }
 
 interface LinkAchievement extends BaseAchievement {
-  type: 'link'
-  links: Link[]
+  type: 'link';
+  links: Link[];
 }
 
-type Achievement = HighlightAchievement | LinkAchievement
+type Achievement = HighlightAchievement | LinkAchievement;
 
 const achievements: Achievement[] = [
   {

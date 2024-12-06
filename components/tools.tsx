@@ -15,11 +15,10 @@ import {
   SiNodedotjs, 
   SiPython, 
   SiVisualstudiocode,
-  SiWhimsical
+  SiMiro
 } from 'react-icons/si'
-import { BsLightningChargeFill } from 'react-icons/bs'
+import { BsLightningChargeFill, BsPencilSquare } from 'react-icons/bs'
 import { FaBrain } from 'react-icons/fa'
-import { TbBrandMidjourney } from 'react-icons/tb'
 import { HiOutlineChartBar } from 'react-icons/hi'
 import { IconType } from 'react-icons'
 
@@ -40,7 +39,7 @@ const toolCategories: ToolCategory[] = [
     tools: [
       { name: "Figma/FigJam", Icon: SiFigma, color: "#F24E1E" },
       { name: "Linear", Icon: SiLinear, color: "#5E6AD2" },
-      { name: "Whimsical", Icon: SiWhimsical, color: "#4A90E2" },
+      { name: "Miro", Icon: SiMiro, color: "#4A90E2" },
       { name: "Notion", Icon: SiNotion, color: "#000000" },
       { name: "Jira", Icon: SiJira, color: "#0052CC" }
     ]
@@ -60,7 +59,7 @@ const toolCategories: ToolCategory[] = [
       { name: "Claude-3", Icon: FaBrain, color: "#9333EA" },
       { name: "v0", Icon: BsLightningChargeFill, color: "#FFD700" },
       { name: "Cursor", Icon: SiVisualstudiocode, color: "#007ACC" },
-      { name: "Midjourney", Icon: TbBrandMidjourney, color: "#000000" }
+      { name: "AI Design", Icon: BsPencilSquare, color: "#000000" }
     ]
   },
   {

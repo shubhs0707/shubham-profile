@@ -1,10 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { Button } from './ui/button'
-import { Download } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { useCallback, useRef, useEffect, memo } from 'react'
+import { useCallback, useRef, memo } from 'react'
 import { motion, LazyMotion, domAnimation } from 'framer-motion'
 import { FloatingMenu } from './floating-menu'
 import { ThemeToggle } from './theme-toggle'
@@ -53,17 +50,7 @@ const SectionTitle = memo(({ title, subtitle }: { title: string; subtitle?: stri
 SectionTitle.displayName = 'SectionTitle'
 
 export function ResumeContent() {
-  const { theme, setTheme } = useTheme()
   const containerRef = useRef<HTMLDivElement>(null)
-
-  const handleDownload = useCallback(() => {
-    const link = document.createElement('a')
-    link.href = '/Shubham Agrawal Resume.pdf'
-    link.download = 'Shubham Agrawal Resume.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }, [])
 
   return (
     <LazyMotion features={domAnimation}>
@@ -72,7 +59,7 @@ export function ResumeContent() {
         className="min-h-screen bg-background"
         initial={false}
       >
-        <ResumeHeader onDownload={handleDownload} />
+        <ResumeHeader />
         
         {/* Work Experience Section */}
         <Section className="bg-secondary/5">
