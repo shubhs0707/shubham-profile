@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Trophy, Users, Newspaper, Presentation, Lightbulb, Target, ExternalLink } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 interface Link {
   title: string;
